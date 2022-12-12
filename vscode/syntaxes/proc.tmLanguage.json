@@ -1,0 +1,86 @@
+{
+	"name": "proc",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#date"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.proc",
+					"match": "\\b(?i)(PROC|ENDPROC|START|ASK|SEQPRT|UNTIL|SHO|WAIT|IF|ELSE|ENDIF|EVENT|WHILE|ENDDO|DO)\\b"
+				}
+			]
+		},
+		"date": {
+			"patterns": [
+			    {
+					"match": "([0-9]{4}-[0-9]{2}-[0-9]{2})( - )([0-9]{2}:[0-9]{2}:[0-9]{2})",
+					"captures": {
+						"1": {
+							"name": "markup.changed.log"
+						},
+						"3": {
+							"name": "markup.changed.log"
+						}
+					}
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+				"name": "comment.line.single-colon.proc",
+				"begin": ";",
+				"end": "\n"
+
+				},
+				{
+				"name":"comment.block.proc",
+				"begin": "\/[*]",
+				"end": "[*](\/)"
+				}
+			]
+		},
+		"strings":{
+			"patterns": [
+				{
+				"name":"string.quoted.single.proc",
+				"begin": "'",
+				"end": "'"
+				},
+				{
+				"name":"string.quoted.double.proc",
+				"begin": "\"",
+				"end": "\""
+				}
+			]
+		},
+		"variables":{
+			"patterns": [
+				{
+				"name": "variable.language.proc"	,
+				"match": "\\b(?i)(local|BIGINT|BOOL|BOOLEAN|BPCHAR|CHAR|CHARACTER|DATE|DECIMAL|DOUBLE|IN8|INT|INT2|INT4|INTEGER|NCHAR|NUMERIC|NVARCHAR|PRECISION|REAL|SMALLINT|TEXT|TIMESTAMP|TIMESTAMPTZ|VARCHAR|VARYING)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.proc"
+}

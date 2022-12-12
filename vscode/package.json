@@ -1,0 +1,26 @@
+{
+    "name": "stol",
+    "displayName": "stol",
+    "description": "A simple extension for STOL syntax highlighting.",
+    "version": "0.0.1",
+    "publisher": "mdeschu",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "proc",
+            "aliases": ["proc", "proc"],
+            "extensions": [".proc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "proc",
+            "scopeName": "source.proc",
+            "path": "./syntaxes/proc.tmLanguage.json"
+        }]
+    }
+}
